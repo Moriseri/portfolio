@@ -1,0 +1,590 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* 謎の余白がつくことへの対策で以下追加0119 */
+   /* *
+{
+  margin: 0;
+  padding: 0;
+} */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+*,*:before,*:after{
+  box-sizing: border-box;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* 以下瀬里奈記述〜 */
+
+/* 境目がわかりやすいように色を変えてる、後で戻す */
+.header_top{
+  width:100%;
+  height:100px;
+  background-color:#FAF5EF;
+  text-align:center;
+  display:flex;
+  padding:30px 0;
+  position:fixed;
+  z-index:100;
+}
+
+.brand_name{
+  width:80%;
+  color:#672F2F;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 40px;
+  margin:auto;
+  text-align: left;
+}
+
+.hamburger-menu {
+    margin-left: auto;
+    margin-right: 15px;
+    width: 120px;
+    color:#D7D1C9;
+    display:flex;
+    z-index:100;
+}
+
+#hamburger{
+  width:50%;
+}
+
+.line{
+height: 2px;
+background-color: #D7D1C9;
+width:100%;
+}
+
+.line:nth-of-type(2){
+margin-top: 10px;
+}
+
+.line:last-child{
+margin-top: 10px;
+width: 75%;
+}
+
+/* 2/14開いた時の動きのために修正加えた↓ */
+body.openHamburger {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.chars.closemenu{
+  opacity: 0;
+}
+
+.in{
+  transform: translateX(100%);
+}
+
+.line_1,.line_2,.line_3{
+  background: #D7D1C9;
+}
+
+.line_1 {
+  transform: translateY(13px) rotate(-45deg);
+  top: 0;
+}
+.line_2 {
+  opacity: 0;
+}
+
+.line_3 {
+  transform: translateY(-10px) rotate(45deg);
+  bottom: 0;
+}
+
+.line.line_3 {
+  width: 100%;
+}
+
+.chars{
+  margin:0 0 0 10px;
+  font-size: 20px;
+  font-family: 'Noto Serif JP', serif;
+}
+
+/* ーーーーーーーーーーーーーーーーーー */
+
+/* 
+.body{
+  height: 3000px;
+} */
+
+/* ハンバーガーメニュー実装に向けて */
+.open {
+  display: none;
+}
+
+.open.is-active {
+  /* display:block; */
+  position:fixed;
+  background-color:#FAF5EF;
+  width: 100%;
+  height: 1000px;
+}
+
+#nav{
+  position: absolute;
+  height: 100vh;
+  width:100%;
+  left: -100%;
+  top: 0;
+  background: #FAF5EF;
+  transition: .7s;
+  z-index:50;
+  overflow-y: scroll;
+}
+
+#nav ul{
+  padding-top: 80px;
+}
+
+#nav ul li{
+  list-style-type: none;
+  font-size: 20px;
+  text-align: center;
+  padding:20px 0px;
+}
+
+
+#nav a{
+  display: block;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px;
+  transition: .5s;
+  font-family: 'Noto Serif JP', serif;
+  font-size :35px;
+  color: #672F2F;
+}
+
+/* #nav li a:hover{
+  color: #ffffff;
+  background: #cd5c5c;
+  border-bottom: none;
+} */
+
+
+.contact_btn{
+  text-align: center;
+  padding:50px 50px;
+}
+
+.btn_1,
+a.btn_1,
+button.btn_1 {
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 1.5;
+  position: relative;
+  padding: 30px 70px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  border-radius: 0.5rem;
+  top: 28%;
+}
+
+.btn--contact1,
+a.btn--contact1 {
+  font-family: 'Noto Serif JP', serif;
+  color: #672F2F;
+  background-color: #FAF5EF;
+  border: 2px solid #D7D1C9;
+}
+
+/* カーソルのせたら色変わる */
+.btn--contact1:hover,
+a.btn--contact1:hover {
+  color: #672F2F;
+  background-color: #D7D1C9;
+}
+
+a.btn--radius_1{
+  border-radius:50px;
+}
+/* ハンバーガーメニュー終わり */
+
+
+.service_info_body{
+  width:auto;
+  height:auto;
+  background-color: #FAF5EF;
+}
+
+.contact_title{
+  width: auto;
+  height: 100px;
+  font-size: 35px;
+  /* margin-bottom: 40px; */
+  font-family: 'Noto Serif JP', serif;
+  text-align:center;
+  color: #672F2F;
+  padding-top: 140px;
+  padding-bottom: 100px;
+}
+
+/* 以下に波線のボーダーラインをひく */
+.under_line{
+  position: relative;
+  padding: 0.3em;
+}
+
+.under_line:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8px;
+  background: repeating-linear-gradient(-45deg, #99B19C, #99B19C 2px, #FAF5EF 2px, #FAF5EF 4px);
+}
+/* 
+.design_info{
+  padding-top:30px;
+  width:85%;
+  height: 200px;
+  padding:0px 20px 0px;
+  background-color: white;
+  justify-content: center;
+} */
+
+.service_menu{
+  width: 100%;
+  height: auto;
+  padding:20px 0px;
+  text-align: center;
+}
+
+.service_menu_item {
+  /* width: 80%; */
+  height: auto;
+  margin:20px 120px;
+  padding: 20px 20px;
+  background-color: white;
+  border-radius: 20px; 
+  font-size: 20px;
+  font-family: 'Noto Serif JP', serif;
+  display: flex;
+}
+
+
+.design_image{
+  padding:10px 0px;
+  width: 20%;
+}
+
+.text{
+  text-align: left;
+  font-size: 17px;
+  line-height: 170%;
+}
+
+
+
+
+
+/* footerエリア */
+.footer_circle{
+  height: auto;
+  width: auto;
+  background-color: #FAF5EF;
+}
+
+
+.footer_top_circle{
+width:auto;
+height:auto;
+border-radius:40px 40px 0 0;
+background:#D7D1C9;
+}
+
+.footer_journal{
+display:flex;
+justify-content: flex-end;
+padding:80px 20px 20px;
+}
+
+
+.footer_brand_name{
+  font-family: 'Noto Serif JP', serif;
+  color:#FAF5EF;
+  font-size:30px;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+.sns_icon{
+  padding-right: 8px;
+}
+
+.icon{
+  width:35px;
+}
