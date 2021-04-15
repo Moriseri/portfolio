@@ -272,14 +272,17 @@ textarea {
 
 /* 以下瀬里奈記述〜 */
 
+/* 1rem=10pxとするための指示 */
+html { font-size: 62.5%; }
+
 /* 境目がわかりやすいように色を変えてる、後で戻す */
 .header_top{
   width:100%;
-  height:100px;
+  height:10rem;
   background-color:#FAF5EF;
   text-align:center;
   display:flex;
-  padding:30px 0;
+  padding:3rem 0;
   position:fixed;
   z-index:100;
 }
@@ -288,15 +291,15 @@ textarea {
   width:80%;
   color:#672F2F;
   font-family: 'Noto Serif JP', serif;
-  font-size: 40px;
+  font-size: 4rem;
   margin:auto;
   text-align: left;
 }
 
 .hamburger-menu {
     margin-left: auto;
-    margin-right: 15px;
-    width: 120px;
+    margin-right: 1.5rem;
+    width: 12rem;
     color:#D7D1C9;
     display:flex;
     z-index:100;
@@ -307,17 +310,17 @@ textarea {
 }
 
 .line{
-height: 2px;
+height: 0.2rem;
 background-color: #D7D1C9;
 width:100%;
 }
 
 .line:nth-of-type(2){
-margin-top: 10px;
+margin-top: 1rem;
 }
 
 .line:last-child{
-margin-top: 10px;
+margin-top: 1rem;
 width: 75%;
 }
 
@@ -340,7 +343,7 @@ body.openHamburger {
 }
 
 .line_1 {
-  transform: translateY(13px) rotate(-45deg);
+  transform: translateY(1.3reｍ) rotate(-45deg);
   top: 0;
 }
 .line_2 {
@@ -348,7 +351,7 @@ body.openHamburger {
 }
 
 .line_3 {
-  transform: translateY(-10px) rotate(45deg);
+  transform: translateY(-1rem) rotate(45deg);
   bottom: 0;
 }
 
@@ -357,17 +360,51 @@ body.openHamburger {
 }
 
 .chars{
-  margin:0 0 0 10px;
-  font-size: 20px;
+  margin:0 0 0 1rem;
+  font-size: 2rem;
   font-family: 'Noto Serif JP', serif;
 }
 
 /* ーーーーーーーーーーーーーーーーーー */
 
-/* 
-.body{
-  height: 3000px;
-} */
+
+
+@media only screen and (max-width: 768px) {
+  .header_top {
+    width:100%;
+    height:6rem;
+    z-index:100;
+  }
+  .brand_name{
+    width:90%;
+    color:#672F2F;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.2rem;
+    margin:auto;
+    text-align: left;
+    padding-left: 1rem;
+  }
+  .hamburger-menu {
+    margin-right: 1.2rem;
+    margin-top: -0.1rem;
+}
+
+body.openHamburger {
+  height: 100vh;
+  overflow-y: hidden;
+}
+.in{
+  transform: translateX(100%);
+}
+.line_1 {
+  transform: translateY(13px) rotate(-45deg);
+  top: 0;
+}
+.line_3 {
+  transform: translateY(-10px) rotate(45deg);
+  bottom: 0;
+}
+}
 
 /* ハンバーガーメニュー実装に向けて */
 .open {
@@ -379,7 +416,7 @@ body.openHamburger {
   position:fixed;
   background-color:#FAF5EF;
   width: 100%;
-  height: 1000px;
+  height: 20rem;
 }
 
 #nav{
@@ -395,54 +432,43 @@ body.openHamburger {
 }
 
 #nav ul{
-  padding-top: 80px;
+  padding-top: 8rem;
 }
 
 #nav ul li{
   list-style-type: none;
-  font-size: 20px;
+  font-size: 2rem;
   text-align: center;
-  padding:20px 0px;
+  padding:2rem 0;
 }
 
 
 #nav a{
   display: block;
   text-decoration: none;
-  margin: 0 15px;
-  padding: 10px;
+  margin: 0 1.5rem;
+  padding: 1rem;
   transition: .5s;
   font-family: 'Noto Serif JP', serif;
-  font-size :35px;
+  font-size :3.5rem;
   color: #672F2F;
 }
 
-/* #nav li a:hover{
-  color: #ffffff;
-  background: #cd5c5c;
-  border-bottom: none;
-} */
-
-
 .contact_btn{
   text-align: center;
-  padding:50px 50px;
+  padding:5rem 5rem;
 }
 
 .btn_1,
 a.btn_1,
 button.btn_1 {
-  font-size: 35px;
+  font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.5;
   position: relative;
-  padding: 30px 70px;
+  padding: 3rem 7rem;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   text-align: center;
   vertical-align: middle;
@@ -457,7 +483,7 @@ a.btn--contact1 {
   font-family: 'Noto Serif JP', serif;
   color: #672F2F;
   background-color: #FAF5EF;
-  border: 2px solid #D7D1C9;
+  border: 0.2rem solid #D7D1C9;
 }
 
 /* カーソルのせたら色変わる */
@@ -468,7 +494,7 @@ a.btn--contact1:hover {
 }
 
 a.btn--radius_1{
-  border-radius:50px;
+  border-radius:5rem;
 }
 /* ハンバーガーメニュー終わり */
 
@@ -481,14 +507,13 @@ a.btn--radius_1{
 
 .contact_title{
   width: auto;
-  height: 100px;
-  font-size: 35px;
-  /* margin-bottom: 40px; */
+  height: 10rem;
+  font-size: 3.5rem;
   font-family: 'Noto Serif JP', serif;
   text-align:center;
   color: #672F2F;
-  padding-top: 140px;
-  padding-bottom: 100px;
+  padding-top: 14rem;
+  padding-bottom: 10rem;
 }
 
 /* 以下に波線のボーダーラインをひく */
@@ -503,52 +528,106 @@ a.btn--radius_1{
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 8px;
-  background: repeating-linear-gradient(-45deg, #99B19C, #99B19C 2px, #FAF5EF 2px, #FAF5EF 4px);
+  height: 0.8rem;
+  background: repeating-linear-gradient(-45deg, #99B19C, #99B19C 0.2rem, #FAF5EF 0.2rem, #FAF5EF 0.4rem);
 }
-/* 
-.design_info{
-  padding-top:30px;
-  width:85%;
-  height: 200px;
-  padding:0px 20px 0px;
-  background-color: white;
-  justify-content: center;
-} */
 
 .service_menu{
   width: 100%;
   height: auto;
-  padding:20px 0px;
+  padding:2rem 0;
   text-align: center;
 }
 
 .service_menu_item {
   /* width: 80%; */
   height: auto;
-  margin:20px 120px;
-  padding: 20px 20px;
+  margin:2rem 12rem;
+  padding: 2rem 2rem;
   background-color: white;
-  border-radius: 20px; 
-  font-size: 20px;
+  border-radius: 2rem; 
+  font-size: 2rem;
   font-family: 'Noto Serif JP', serif;
   display: flex;
 }
 
 
 .design_image{
-  padding:10px 0px;
-  width: 20%;
+  width: 40%;
 }
 
 .text{
   text-align: left;
-  font-size: 17px;
+  font-size: 1.7rem;
   line-height: 170%;
 }
 
-
-
+@media only screen and (max-width: 768px) {
+  .service_info_body{
+    width:auto;
+    height:auto;
+  }
+  
+  .contact_title{
+    width: auto;
+    height: 10rem;
+    font-size: 2.0rem;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* 以下に波線のボーダーラインをひく */
+  .under_line{
+    position: relative;
+    padding: 0.3em;
+  }
+  
+  .under_line:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 100%;
+    height: 8px;
+    background: repeating-linear-gradient(-45deg, #99B19C, #99B19C 2px, #FAF5EF 2px, #FAF5EF 4px);
+  }  
+  
+  .service_menu{
+    display: block;
+    width: 100%;
+    padding:0.5rem 0rem;
+    height: auto;
+    text-align: center;
+  }
+ 
+  .service_menu_item {
+    height: auto;
+    width: 95%;
+    margin:2rem 0rem 2rem 1rem;
+    padding: 1.5rem 1.5rem;
+    border-radius: 2rem; 
+    font-size: 1.4rem;
+    display: flex;
+  }
+  /* ここのバランスがうまくいかない〜 */
+  .naraberu{
+    width: 30%;
+  }
+  .naraberu h3{
+    width:100%;
+  }
+  .design_image{
+    padding:0;
+    width: 100%;
+    object-fit: contain;
+  }
+  .text{
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 170%;
+    width: 70%;
+  }
+}
 
 
 /* footerエリア */
@@ -562,29 +641,70 @@ a.btn--radius_1{
 .footer_top_circle{
 width:auto;
 height:auto;
-border-radius:40px 40px 0 0;
+border-radius:4rem 4rem 0 0;
 background:#D7D1C9;
 }
 
 .footer_journal{
 display:flex;
 justify-content: flex-end;
-padding:80px 20px 20px;
+padding:8rem 2rem 2rem;
 }
 
 
 .footer_brand_name{
   font-family: 'Noto Serif JP', serif;
   color:#FAF5EF;
-  font-size:30px;
-  padding-top: 5px;
-  padding-right: 5px;
+  font-size:3rem;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .sns_icon{
-  padding-right: 8px;
+  padding-right: 0.8rem;
 }
 
 .icon{
-  width:35px;
+  width:3.5rem;
+}
+
+.icon2{
+  width:3.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer_circle{
+    height:auto;
+    width: auto;
+  }
+  
+  .footer_top_circle{
+  width:auto;
+  height:auto;
+  border-radius:4rem 4rem 0 0;
+  }
+  
+  .footer_journal{
+  display:flex;
+  justify-content: flex-end;
+  padding:1rem 2rem 3rem 0;
+  }
+  
+  
+  .footer_brand_name{
+    font-size:1.8rem;
+    padding:0.5rem 0.5rem 0.5rem 0;
+  }
+  
+  .sns_icon{
+    padding-right: 0.8rem;
+    padding-top: 0.3rem;
+  }
+  
+  .icon{
+    width:2.0rem;
+  }
+  .icon2{
+    width:2.0rem;
+  }
 }
